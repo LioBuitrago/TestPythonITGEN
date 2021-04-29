@@ -1,4 +1,3 @@
-import re
 def most_wanted_letter(entradaLetras):
     resultado = 0
     checked = "There are no letters in the string."
