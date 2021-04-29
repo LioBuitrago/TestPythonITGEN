@@ -1,11 +1,11 @@
-# Дана строка из любых символов. Вам необходимо вывести букву, которая встречается чаще всего.
-# Буквы могут быть любого алфавита. Задание выполняется без учета регистра.
-# Оформить в виде функции most_wanted_letter. Аргументом функции является строка с любым содержимым.
-# Функция должна возвращать фразу с буквой (например, как на следующем слайде) или фразу с
-# предупреждением, что букв здесь нет.
-
-def MostWantedLetter(entradaLetras):
+import re
+def most_wanted_letter(entradaLetras):
     resultado = 0
+    checked = "There are no letters in the string."
+    check = any(c.isalpha() for c in entradaLetras)
+    if check is False:
+        return checked
+    entradaLetras = entradaLetras.lower()
     for cadaLetra in entradaLetras:
         if cadaLetra.isalpha():
             if entradaLetras.count(cadaLetra) > resultado:
@@ -15,6 +15,12 @@ def MostWantedLetter(entradaLetras):
                 if cadaLetra < laMasBuscado:
                     laMasBuscado = cadaLetra
                     resultado = entradaLetras.count(cadaLetra)
-    print(laMasBuscado)
-entradaLetras = input().lower()
-MostWantedLetter(entradaLetras)
+
+    return laMasBuscado
+
+print(most_wanted_letter("......HeLlo......"))
+print(most_wanted_letter("String ssss ttAAds TTTTTTT"))
+print(most_wanted_letter("!@#$%^&*(*&^%$#@@#$%^&*DFGBQQQQQQQQqqqrrrrrrrr"))
+print(most_wanted_letter("!@#$%^&*543234%^&*%$#@345677^%$#@#$%^&"))
+print(most_wanted_letter("....пррррривет..."))
+print(most_wanted_letter("....Tschüüüüüüüss!..."))

@@ -12,25 +12,26 @@ def minimum(M):
         r = row_sums.index(min(row_sums))
         result.append(r)
         result.append(c)
-    print(row_sums)
-    print(column_sums)
-    print(result)
-M1 = [
+    # print(row_sums)
+    # print(column_sums)
+    # print(result)
+    return result
+
+
+print(minimum(
+    [
         [7, 2, 7, 2, 8],
         [2, 9, 4, 1, 7],
         [3, 8, 6, 2, 4],
         [2, 5, 2, 9, 1],
         [6, 6, 5, 4, 5]
-
-    ]
-
-M2 =[
+    ]))
+    
+print(minimum(
+    [
         [-7, -2, -7, -2, -8],
         [-2, -9, -4, -1, -7],
         [-3, -8, -6, -2, -4],
         [-2, -5, -2, -9, -1],
         [-6, -6, -5, -4, -5]
-    ]
-
-minimum(M1)
-minimum(M2)
+    ]))

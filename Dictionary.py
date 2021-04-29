@@ -28,10 +28,9 @@ def sub_for_students(item):
     for key in clase.keys():
         if item in clase[key]:
             studSubs.append(key)
-    if item not in clase[key]:
+    print(studSubs)
+    if studSubs == 0:
         print("There are no matching students.")
-    else:
-        print(studSubs)
 
 clase = {}
 
@@ -44,7 +43,7 @@ for i in range(total):
     clase = adicion(clase, Estudiante, Materias)
 
 show_all()
-x = str(input("Student's subjetc: "))
-student_for_sub(x)
-y = str(input("Subject's student: "))
-sub_for_students(y)
+one = str(input("Student's subjetc: "))
+student_for_sub(one)
+two = str(input("Subject's student: "))
+sub_for_students(two)
